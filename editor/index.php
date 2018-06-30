@@ -30,8 +30,8 @@ include_once("../phpOperations/getData.php");
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
     <!-- Montserrat for title -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-
+<!-- Confirm msg css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,6 +40,9 @@ include_once("../phpOperations/getData.php");
     <![endif]-->
 </head>
 <body>
+<div style="background: url('../assets/images/preloader.gif') center no-repeat #fff;" id="pageLoad"></div>
+<div id="app">
+<img src="../assets/images/mostoutstanding.png" alt="" class="overlay award" id="animate3d">
 
 <!-- Start Header -->
 <header id="mu-hero" class="" role="banner">
@@ -135,7 +138,7 @@ include_once("../phpOperations/getData.php");
 
                                 <div class="col-md-12">
                                     <div class="mu-contact-form-area">
-                                        <div id="form-messages"><?php echo $messege?></div>
+                                        <!--div id="form-messages"><?php //echo $messege?></div-->
                                         <form id="ajax-contact" method="post" action="../phpOperations/addQuestion.php"
                                               class="mu-contact-form">
                                             <div class="form-group">
@@ -152,7 +155,9 @@ include_once("../phpOperations/getData.php");
                                                        placeholder="Enter Editor Password" id="password" name="password"
                                                        required>
                                             </div>
-                                            <input type="submit" class="mu-send-msg-btn" value="Post Question" name="submit">
+                                                                                                                                    <div id="loader"><i class="fa fa-spinner load fa-3x" aria-hidden="true"></i></div>
+
+                                            <input type="submit" class="mu-send-msg-btn" value="Post Question" name="submit" id="submit">
 
                                         </form>
                                     </div>
@@ -204,7 +209,7 @@ include_once("../phpOperations/getData.php");
 
 </footer>
 <!-- End footer -->
-
+    </div>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -222,6 +227,8 @@ include_once("../phpOperations/getData.php");
 <!-- Custom js -->
 <script type="text/javascript" src="../assets/js/custom.js"></script>
 
+<!-- Confirm js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
 </body>
 </html>

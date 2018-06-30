@@ -25,13 +25,13 @@ $crud = new Crud();
     );
     if($month!="" || $question !=""){
     if(in_array(strtoupper($month),$months)){
-    if($pass==sha1("uomquizzypop")){
+    if($pass==sha1("quizzypop@uomleos")){
         $deleteQuery = "DELETE FROM quizzypop_data";
 
         if($crud->execute($deleteQuery)){
             $addQuery = "INSERT INTO quizzypop_data VALUES ('{$month}','{$question}','{$up_date}')";
             if ($crud->execute($addQuery)){
-                echo "Question Added Successfully ! Refresh or Goto Answer page to view Current Question!";
+                echo "Question Added Successfully !";
             }
         }else{
             echo "Error Happened while Adding Data. So, Please Try Again !";

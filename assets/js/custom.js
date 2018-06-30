@@ -1,3 +1,15 @@
+   //page loading animation part 1
+   $(window).on('load', function() {
+    $("#pageLoad").fadeOut('fast');
+});
+
+$(document).ready(function() {
+    //page loading animation part 2
+    $("#app").fadeIn('fast');});
+ 
+
+
+
 /**	
 	* Template Name: Eventoz
 	* Version: 1.0	

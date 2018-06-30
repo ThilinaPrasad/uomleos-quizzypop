@@ -36,6 +36,9 @@ include_once("phpOperations/getData.php");
     <!-- Montserrat for title -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
+ <!-- Confirm msg css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +48,9 @@ include_once("phpOperations/getData.php");
     <![endif]-->
 </head>
 <body>
-
+<div style="background: url('assets/images/preloader.gif') center no-repeat #fff;" id="pageLoad"></div>
+<div id="app">
+<img src="assets/images/mostoutstanding.png" alt="" class="overlay award" id="animate3d">
 <!-- Start Header -->
 <header id="mu-hero" class="" role="banner">
     <!-- Start menu  -->
@@ -177,7 +182,7 @@ include_once("phpOperations/getData.php");
 
                                 <div class="col-md-12">
                                     <div class="mu-contact-form-area">
-                                        <div id="form-messages" class="text-center"></div>
+                                        
                                         <form id="ajax-contact" method="post" action="phpOperations/submitAnswer.php"
                                               class="mu-contact-form">
                                             <div class="form-group">
@@ -202,9 +207,12 @@ include_once("phpOperations/getData.php");
                                                 <textarea class="form-control" placeholder="Enter Your Answer Here..."
                                                           id="message" name="msg" required></textarea>
                                             </div>
-                                            <input type="submit" class="mu-send-msg-btn" value="Submit Answer">
+                                                                                        <div id="loader"><i class="fa fa-spinner load fa-3x" aria-hidden="true"></i></div>
+
+                                            <input type="submit" id="submit" class="mu-send-msg-btn" value="Submit Answer">
 
                                         </form>
+                                        <!--div id="form-messages" class="text-center"></div-->
                                         <br>
                                         
                                     </div>
@@ -346,7 +354,7 @@ include_once("phpOperations/getData.php");
                 </div>
             </div>
             <div class="mu-footer-bottom">
-                <p class="mu-copy-right">&copy;Quizzy Pop @ <a rel="nofollow" href="http://www.uomleos.org/">UoM
+                <p class="mu-copy-right">&copy; Quizzy Pop 2018 @ <a rel="nofollow" href="http://www.uomleos.org/">UoM
                         Leos</a>. All right reserved.</p>
             </div>
         </div>
@@ -355,7 +363,7 @@ include_once("phpOperations/getData.php");
 </footer>
 <!-- End footer -->
 
-
+</div>
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -371,6 +379,9 @@ include_once("phpOperations/getData.php");
 
 <!-- Custom js -->
 <script type="text/javascript" src="assets/js/custom.js"></script>
+
+<!-- Confirm js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
 
 </body>
