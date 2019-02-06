@@ -6,6 +6,7 @@ include_once("../phpOperations/getData.php");
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <script src="alert/dist/sweetalert-dev.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -40,7 +41,7 @@ include_once("../phpOperations/getData.php");
     <![endif]-->
 </head>
 <body>
-<div style="background: url('../assets/images/preloader.gif') center no-repeat #fff;" id="pageLoad"></div>
+<div style="background: url('../assets/images/preloader.gif') center no-repeat #fefcfe;" id="pageLoad"></div>
 <div id="app">
 <img src="../assets/images/mostoutstanding.png" alt="" class="overlay award" id="animate3d">
 
@@ -69,6 +70,7 @@ include_once("../phpOperations/getData.php");
                     <li><a href="#mu-hero">Home</a></li>
                     <li><a href="#mu-contact">Current Question</a></li>
                     <li><a href="#answer">Add New Question</a></li>
+                    <li><a href="#winer">Add a winner</a></li>
                     <li><a href="http://quizzypop.uomleos.org/">Go To Quizzy Pop Web</a></li>
 
                 </ul>
@@ -155,8 +157,7 @@ include_once("../phpOperations/getData.php");
                                                        placeholder="Enter Editor Password" id="password" name="password"
                                                        required>
                                             </div>
-                                                                                                                                    <div id="loader"><i class="fa fa-spinner load fa-3x" aria-hidden="true"></i></div>
-
+                                                                                                                                
                                             <input type="submit" class="mu-send-msg-btn" value="Post Question" name="submit" id="submit">
 
                                         </form>
@@ -169,6 +170,56 @@ include_once("../phpOperations/getData.php");
                 </div>
             </div>
         </div>
+
+        <div class="mu-title-area"   id = "winer">
+            <div class="mu-title-area">
+                <h2 class="mu-heading-title">Add a Winner</h2>
+            </div>
+        </div>
+            <div class="mu-contact-content">
+                <div class="col-md-12">
+                    <div class="mu-contact-form-area">
+                        <form method="post" action="../phpOperations/addWinner.php"
+                              class="mu-contact-form" enctype="multipart/form-data">
+
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Enter Quizzy Pop Month" id="win_month" name="month"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <input type = "text" class="form-control" placeholder="Enter winner's name here"
+                                          id="winner_name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       placeholder="Enter winner's email" id="email" name="email"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                  <input type="file" name="photo" class="form-control">
+                                </div>
+                            
+
+                            <div class="form-group">
+                                <input type="password" class="form-control"
+                                       placeholder="Enter Editor Password" name="password"
+                                       required>
+                            </div>
+
+
+
+                            <div id="loader"><i class="fa fa-spinner load fa-3x" aria-hidden="true"></i></div>
+                                                                                                                
+                            <input type="submit" class="mu-send-msg-btn" value="Post Winner" name="submit" id="submit2y">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
     </section>
     <!-- End Contact -->
 
@@ -226,6 +277,7 @@ include_once("../phpOperations/getData.php");
 
 <!-- Custom js -->
 <script type="text/javascript" src="../assets/js/custom.js"></script>
+<script type="text/javascript" src="../assets/js/form2.js"></script>
 
 <!-- Confirm js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>

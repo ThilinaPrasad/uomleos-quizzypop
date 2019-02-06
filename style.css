@@ -1417,3 +1417,26 @@ button:focus {
 	
 }
 
+/* Scroll bar */
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(238, 50, 104,0.7);
+
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(238, 50, 104,0.8);
+
+  }

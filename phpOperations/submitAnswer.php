@@ -120,7 +120,7 @@ if($month=="" || $name =="" || $contactNo =="" || $email == "" || $answer==""){
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" >
                 <tr>
                     <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
-                        <a href="http://litmus.com" target="_blank">
+                        <a href="http://quizzypop.uomleos.org/" target="_blank">
                             <img alt="Logo" src="http://quizzypop.uomleos.org/assets/images/quizzy_logo.png" width="80" height="80" style="display: block; width: 300px; max-width: 300px; min-width: 300px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
                         </a>
                     </td>

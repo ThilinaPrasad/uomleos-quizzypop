@@ -1,7 +1,7 @@
 <?php
 class DbConfig{
     
-    private $_host='localhost'; //host name
+      private $_host='localhost'; //host name
     private $_username='uomleoso_root'; //username for the database
     private $_password='bestleos2017';  //password for the database
     private $_database='uomleoso_leo'; //database name

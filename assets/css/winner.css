@@ -1,0 +1,64 @@
+
+    .bg-img{
+      background-image: url("../images/winner/winner_back.gif");
+      background-position: center , center;
+      background-repeat: repeat,no-repeat;
+      background-size: auto,cover;
+    }
+  
+    .user_img{
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+        margin-left: auto;
+    margin-right: auto;
+    z-index: 5;
+    display: block;
+    }
+    .details{
+      position: relative;
+      top: -15%;
+    }
+    .winner_starts{
+        width: 345px;
+        height: 345px;
+        border-radius: 50%;
+          margin-left: auto;
+      margin-right: auto;
+    display: block;
+    position: relative;
+    top: -322px;
+      -webkit-animation: rotation 18s infinite linear;
+    }
+    .trophy{
+        width: 160px;
+        height: 160px;
+        z-index: 999;
+        position: relative;
+        top: 325px;
+        left: 60px;
+      }
+
+      .winner-data{
+          position: relative;
+          top: -325px;
+          color: #EE3268;
+      }
+
+      
+      .all{
+        margin-top: -150px;     
+    }
+  
+
+
+    @-webkit-keyframes rotation {
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(359deg);
+      }
+    }
+  
+  

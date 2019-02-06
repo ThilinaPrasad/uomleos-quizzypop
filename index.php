@@ -1,6 +1,7 @@
 <?php
 //load Data
 include_once("phpOperations/getData.php");
+include_once("phpOperations/getWinner.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +29,8 @@ include_once("phpOperations/getData.php");
 
     <!-- Main Style -->
     <link href="style.css" rel="stylesheet">
+    <link href="assets/css/winner.css" rel="stylesheet">
+    <link href="assets/snow/snow.css" rel="stylesheet">
 
     <!-- Fonts -->
 
@@ -35,10 +38,10 @@ include_once("phpOperations/getData.php");
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
     <!-- Montserrat for title -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
 
  <!-- Confirm msg css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +51,22 @@ include_once("phpOperations/getData.php");
     <![endif]-->
 </head>
 <body>
-<div style="background: url('assets/images/preloader.gif') center no-repeat #fff;" id="pageLoad"></div>
+    
+    <!--  chrismas effect-->
+    <!--div id="snowflakeContainer">
+    <p class="snowflake">&#10054;</p>
+</div-->
+
+<!--iframe src="assets/snow/audio.mp3" allow="controls autoplay" loop="true" style="display:none" id="iframeAudio" allowullScreen>
+</iframe> 
+    <audio controls autoplay loop id="playAudio" style="display:none;">
+      <source src="assets/snow/audio.ogg" type="audio/ogg">
+        <source src="assets/snow/audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio-->
+        <!--  chrismas effect-->
+
+<div style="background: url('assets/images/preloader.gif') center no-repeat #fefcfe;" id="pageLoad"></div>
 <div id="app">
 <img src="assets/images/mostoutstanding.png" alt="" class="overlay award" id="animate3d">
 <!-- Start Header -->
@@ -74,6 +92,7 @@ include_once("phpOperations/getData.php");
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav mu-menu navbar-right">
                     <li><a href="#mu-hero">Home</a></li>
+                    <li><a href="#winner">Last Winner</a></li>
                     <li><a href="#mu-contact">Question</a></li>
                     <li><a href="#answer">Answer Form</a></li>
                     <li><a href="#mu-schedule">Editorial Team</a></li>
@@ -115,14 +134,12 @@ include_once("phpOperations/getData.php");
 <!-- Start main content -->
 <main role="main">
 
-    </section>
     <!-- Start Contact -->
-    <section id="mu-contact">
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="mu-contact-area">
-                        
                         <div class="mu-title-area">
                             <font color="#B90008">
                             <i class="fa fa-star" aria-hidden="true"></i>
@@ -153,11 +170,30 @@ include_once("phpOperations/getData.php");
                             <br>
                         </div>
 
-                        <div class="mu-title-area" id="answer">
-                            <h2 class="mu-heading-title">&nbsp;</h2>
-                            <h2 class="mu-heading-title">&nbsp;</h2>
+                        <div class="mu-title-area">
+                            <!-- <h2 class="mu-heading-title">&nbsp;</h2> -->
+                            <h2 class="mu-heading-title" id="winner">&nbsp;</h2>
 
                         </div>
+
+                        <!--Winner Section-->
+<div class="mu-title-area"  style="height: 520px;" >
+      <div class="row">
+        <h1 style="font-family: 'Clicker Script', cursive; font-size: 60px; font-weight: 600;">Congratulations!</h1>
+      </div>
+      <div class="all">
+        <div class="row ">
+        <img src="assets/images/winner/winner_throphy.png" class="trophy">
+          <img src="phpOperations/winners/winner.jpg" class="user_img">
+          <img src="assets/images/winner/winner_starts.png" class="winner_starts">
+        </div>
+      <div class="row winner-data">
+        <h4 style="margin-top: 25px;margin-bottom:0;font-family: Coda;"><?php echo $winner_data[0]['name'];?></h4>
+        <p style="margin-top: 0;font-family: Coda;"  id="mu-contact">The <b>Winner</b> of the <b>QuizzyPop</b> month <b><?php echo $winner_data[0]['month'];?></b></p>
+      </div>
+      </div>
+  </div>
+<!--#Winner section-->
 
                         <div class="mu-title-area">
                             <h2 class="mu-heading-title">Quizzy Pop Question for Month <?php echo $data[0]['month'];?></h2>
@@ -225,20 +261,22 @@ include_once("phpOperations/getData.php");
             </div>
         </div>
     </section>
+
+    
     <!-- End Contact -->
 
-    <!-- Start Schedule  -->
-    <section id="mu-schedule">
+    <!-- Editorial Lisit Schedule  -->
+    <section id="mu-schedule" >
         <div class="container">
             <div class="row">
                 <div class="colo-md-12">
-                    <div class="mu-schedule-area">
+                    <div class="mu-schedule-area" style="padding-top:0;">
 
                         <div class="mu-title-area">
                             <h2 class="mu-title">Our Editorial Team</h2>
                         </div>
 
-                        <div class="mu-schedule-content-area">
+                        <div class="mu-schedule-content-area" style="margin-top:0;">
 
 
                             <!-- Tab panes -->
@@ -247,68 +285,61 @@ include_once("phpOperations/getData.php");
                                     <ul>
                                         <li>
                                             <div class="mu-single-event">
-                                                <img src="assets/images/supun.jpg" alt="event speaker">
+                                                <img src="assets/images/thilina.jpg" alt="event speaker">
                                                 <p class="mu-event-time">Director of Editorial</p>
-                                                <h3>Leo Supun Nimmana</h3>
-                                                <span><a href="mailto:supun.kalu@gmail.com">supun.kalu@gmail.com</a></span>
+                                                <h3>Leo Thilina Prasad</h3>
+                                                <span><a href="mailto:thilina.prashad25@gmail.com">thilina.prashad25@gmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="mu-single-event">
-                                                <img src="assets/images/chamindi.jpg" alt="event speaker">
+                                                <img src="assets/images/main.jpg" alt="event speaker">
                                                 <p class="mu-event-time">Cheif Editor</p>
-                                                <h3>Leo Chamindi Jayaweera</h3>
-                                                <span><a href="mailto:chamindicj@gmail.com">chamindicj@gmail.com</a></span>
+                                                <h3>Leo Shanika Priyadarshnai</h3>
+                                                <span><a href="mailto:s.priyadarshani215@gmail.com">priyadarshani215@gmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="mu-single-event">
-                                                <img src="assets/images/jayanga.jpg" alt="event speaker">
+                                                <img src="assets/images/nifa.jpg" alt="event speaker">
                                                 <p class="mu-event-time">Editorial Member</p>
-                                                <h3>Leo Jayanga Nishadhi</h3>
-                                                <span><a href="mailto:jayangakodikara@gmail.com">jayangakodikara@gmail.com</a></span>
+                                                <h3>Leo Nifran Mohomed</h3>
+                                                <span><a href="mailto:mnifran16@gmail.com">mnifran16@gmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="mu-single-event">
-                                                <img src="assets/images/narmada.jpg" alt="event speaker">
+                                                <img src="assets/images/chamodi.jpg" alt="event speaker">
                                                 <p class="mu-event-time">Editorial Member</p>
-                                                <h3>Leo Narmadha Liyanagamage</h3>
-                                                <span><a href="mailto:94nkglg@gmail.com">94nkglg@gmail.com</a></span>
+                                                <h3>Leo Chamodi Lokuliyana</h3>
+                                                <span><a href="mailto:chamodihima@gmail.com">chamodihima@gmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="mu-single-event">
-                                                <img src="assets/images/shanika.jpg" alt="event speaker">
+                                                <img src="assets/images/nilu.jpg" alt="event speaker">
                                                 <p class="mu-event-time">Editorial Member</p>
-                                                <h3>Leo Shanika Priyadarshani</h3>
-                                                <span><a href="s.priyadarshani215@gmail.com">s.priyadarshani215@gmail.com</a></span>
+                                                <h3>Leo Nilupuli Hansamali</h3>
+                                                <span><a href="mailto:nilupulee.hansamali@gmail.com">nilupulee.hansamali@gmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="mu-single-event">
-                                                <img src="assets/images/shirmila.jpg" alt="event speaker">
+                                                <img src="assets/images/hashani.jpg" alt="event speaker">
                                                 <p class="mu-event-time">Editorial Member</p>
-                                                <h3>Leo Shirmila Pabasara</h3>
-                                                <span><a href="mailto:shirmila95@gmail.com">shirmila95@gmail.com</a></span>
+                                                <h3>Leo Hashani Senanayaka</h3>
+                                                <span><a href="mailto:hashanih95@gmail.com">hashanih95@gmail.com</a></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="mu-single-event">
-                                                <img src="assets/images/supimi.jpg" alt="event speaker">
+                                                <img src="assets/images/sanath.jpg" alt="event speaker">
                                                 <p class="mu-event-time">Editorial Member</p>
-                                                <h3>Leo Supimi Piyumika</h3>
-                                                <span><a href="mailto:supimigamage@gmail.com">supimigamage@gmail.com</a></span>
+                                                <h3>Leo Sanath Ramesh</h3>
+                                                <span><a href="mailto:sr19951218@gmail.com ">sr19951218@gmail.com </a></span>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="mu-single-event">
-                                                <img src="assets/images/anushka.jpg" alt="event speaker">
-                                                <p class="mu-event-time">Editorial Member</p>
-                                                <h3>Leo Anushka Umayanga</h3>
-                                                <span><a href="mailto:anushkaumayanga1@gmail.com">anushkaumayanga1@gmail.com</a></span>
-                                            </div>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -323,6 +354,9 @@ include_once("phpOperations/getData.php");
     <!-- End Schedule -->
 </main>
 <!-- End main content -->
+
+
+
 <!-- Start footer -->
 <footer id="mu-footer" role="contentinfo">
     <div class="container">
@@ -382,6 +416,7 @@ include_once("phpOperations/getData.php");
 
 <!-- Confirm js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+<script src="assets/snow/snow.js"></script>
 
 
 </body>
